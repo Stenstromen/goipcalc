@@ -1,6 +1,26 @@
-# ipcalc
+# GoIPCalc
+
+- [GoIPCalc](#goipcalc)
+  - [Description](#description)
+  - [Installation via Homebrew (MacOS/Linux - x86\_64/arm64)](#installation-via-homebrew-macoslinux---x86_64arm64)
+  - [Download and Run Binary](#download-and-run-binary)
+  - [Building](#building)
+  - [Example Usage](#example-usage)
+
+## Description
 
 This is a Go rewrite of the IPv4/IPv6 subnet calculator originally written in Perl by Krischan Jodies [http://jodies.de/ipcalc](http://jodies.de/ipcalc).
+
+## Installation via Homebrew (MacOS/Linux - x86_64/arm64)
+
+```bash
+brew install stenstromen/tap/ipcalc
+```
+
+## Download and Run Binary
+
+- For **MacOS** and **Linux**: Checkout and download the latest binary from [Releases page](https://github.com/Stenstromen/goipcalc/releases/latest/)
+- For **Windows**: Build the binary yourself.
 
 ## Building
 
@@ -8,7 +28,7 @@ This is a Go rewrite of the IPv4/IPv6 subnet calculator originally written in Pe
 go build -o ipcalc .
 ```
 
-## Usage
+## Example Usage
 
 The Go version maintains compatibility with the original Perl version's command-line interface.
 
