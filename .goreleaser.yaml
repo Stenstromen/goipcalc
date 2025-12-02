@@ -1,0 +1,34 @@
+version: 2
+project_name: ipcalc
+before:
+  hooks:
+    - go test ./...
+builds:
+  - env: [CGO_ENABLED=0]
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    binary: ipcalc
+    ldflags:
+      - -s -w
+    flags:
+      - -trimpath
+archives:
+  - name_template: >-
+      {{ .ProjectName }}_
+      {{- title .Os }}_
+      {{- if eq .Arch "amd64" }}x86_64
+      {{- else }}{{ .Arch }}{{ end }}
+brews:
+  - name: ipcalc
+    repository:
+      owner: stenstromen
+      name: homebrew-tap
+    commit_author:
+      name: stenstromen
+    homepage: https://github.com/Stenstromen/ipcalc
+    description: Go binary for IPv4/IPv6 subnet calculator
+    directory: Formula

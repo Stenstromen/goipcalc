@@ -10,7 +10,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-const version = "0.51"
+const version = "v0.0.0"
 
 var (
 	optHTML           = false
