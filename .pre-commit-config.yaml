@@ -1,0 +1,28 @@
+---
+repos:
+  - repo: local
+    hooks:
+      - id: go-build
+        name: Go Build
+        entry: go build -ldflags="-s -w" -trimpath -o ipcalc .
+        language: system
+        types: [go]
+        pass_filenames: false
+      - id: go-test
+        name: Go Test
+        entry: go test ./...
+        language: system
+        types: [go]
+        pass_filenames: false
+      - id: go-mod-tidy
+        name: Go Mod Tidy
+        entry: go mod tidy
+        language: system
+        types: [go]
+        pass_filenames: false
+      - id: go-vet
+        name: Go Vet
+        entry: go vet ./...
+        language: system
+        types: [go]
+        pass_filenames: false
